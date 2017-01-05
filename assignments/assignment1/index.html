@@ -9,7 +9,7 @@
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
       .notempty{ color:  green; border-color: green}
-      .isempty{  border-color: red}
+      .isempty{ color:  red; border-color: red}
     </style>
   </head>
 <body ng-app="LunchCheck">
@@ -24,7 +24,7 @@
          <div class="form-group">
              <button ng-click="checkIfTooMuch();" class="btn btn-default">Check If Too Much</button>
          </div>
-         <div  class="form-group message">
+         <div  class="form-group message {{css}}empty">
            <!-- Your message can go here. -->
            {{ messageToShow}}
          </div>
