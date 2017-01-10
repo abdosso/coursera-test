@@ -34,13 +34,13 @@
     <div class="col-md-6" ng-controller="ToBuyController as listToBuy">
      <h2>To Buy:</h2>
 
-     <ol>
+     <ul>
       <li ng-repeat="item in listToBuy.items">  {{ item.quantity }}  {{ item.name }}
           <button ng-click="listToBuy.moveItem($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button>
       </li>
 
-    </ol>
-     <div ng-if="listToBuy.showErrorMessageListToBuy" class="emptyMessage">{{ listToBuy.errorMessageListToBuy }}</div>
+    </ul>
+     <div ng-if="listToBuy.items.length ==0" class="emptyMessage">{{ listToBuy.errorMessageListToBuy }}</div>
     </div>
 
     <!-- Already Bought List -->
@@ -49,7 +49,7 @@
      <ul>
        <li ng-repeat="item in listAlreadyBought.items">Bought {{ item.quantity }} {{ item.name }} </li>
      </ul>
-     <div   ng-if="listAlreadyBought.showErrorMessageBoughtList" class="emptyMessage">{{ listAlreadyBought.errorMessageBoughtList }}</div>
+     <div   ng-if=" listAlreadyBought.items.length ==0" class="emptyMessage">{{ listAlreadyBought.errorMessageBoughtList }}</div>
     </div>
   </div>
 </div>

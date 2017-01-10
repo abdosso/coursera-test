@@ -10,19 +10,12 @@ angular.module('ShoppingListCheckOff', [])
 ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
   var list = this;
-    list.errorMessageListToBuy="Everything is bought!";
-    list.showErrorMessageListToBuy=false;
+  list.errorMessageListToBuy="Everything is bought!";
+  list.showErrorMessageListToBuy=false;
   list.items = ShoppingListCheckOffService.getToBuyList();
 
   list.moveItem = function (itemIndex) {
     ShoppingListCheckOffService.moveItem(itemIndex);
-     list.showErrorMessageListToBuy=ShoppingListCheckOffService.showErrorMessageListToBuy;
-      //list.items
-    if ( (list.items).length == 0)
-    {
-       list.items = ShoppingListCheckOffService.initToBuyList();
-    }
-
   };
 
 }
@@ -33,18 +26,12 @@ AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var list = this;
   list.errorMessageBoughtList="Nothing bought yet.";
-//
-  console.log("debut");
-  list.items = ShoppingListCheckOffService.getBoughtList();
-      list.showErrorMessageBoughtList=true;
-    console.log("fin");
 
-//  list.showErrorMessageBoughtList=ShoppingListCheckOffService.showErrorMessageBoughtList;
+  list.items = ShoppingListCheckOffService.getBoughtList();
 
 }
 
 
-// If not specified, maxItems assumed unlimited
 function ShoppingListCheckOffService() {
   var service = this;
 
@@ -82,15 +69,6 @@ function ShoppingListCheckOffService() {
     boughtList.push(itemToMove);
 
     toBuyList.splice(itemIndex, 1);
-    if ( boughtList.length > 0)
-    {
-            service.showErrorMessageBoughtList=false;
-    }
-
-    if ( toBuyList.length == 0)
-    {
-        service.showErrorMessageListToBuy=true;
-    }
 
   };
 
@@ -99,9 +77,6 @@ function ShoppingListCheckOffService() {
   };
   service.getBoughtList = function () {
     return boughtList;
-  };
-  service.initToBuyList = function () {
-      return boughtList;
   };
 
 }
