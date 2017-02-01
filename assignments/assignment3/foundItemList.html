@@ -1,0 +1,30 @@
+<div>
+    <br/>
+    <br/>
+    <br/>
+
+    <table class="table table-hover"  ng-if="foundDirectiveControlleur.found.length >= 1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+             <tr ng-repeat="item in foundDirectiveControlleur.found" >
+               
+            <td>({{ item.short_name }}) {{ item.name }}</td><td> {{ item.description }}</td>
+      
+               <td> <button class="btn btn-dontWantThisOne" ng-click="foundDirectiveControlleur.onRemove({index: $index});">Don't want this one!</button>
+               </td>  
+            </tr>
+
+       
+            </tbody>
+    </table>
+</div>
+
+
+
