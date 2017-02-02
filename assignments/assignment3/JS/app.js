@@ -14,23 +14,26 @@
     NarrowItDownController.$inject = ['MenuSearchService', '$window'];
     function NarrowItDownController(MenuSearchService, $window) {
         var monControlleur = this;
-    
-        monControlleur.searchTerm = "";
+   
         monControlleur.found = [];
-        monControlleur.error = "";
+        monControlleur.message = "";
         monControlleur.foundControlleurResearch = function (search) {
             if (search === undefined || search === "") {
                 monControlleur.found = [];
-                $window.alert("Please enter something to do a search ");
+                monControlleur.message = "Nothing found";
             } else {
                 var promise = MenuSearchService.getMatchedMenuItems(search);
                 promise.then(function success(result) {
                   
                     if (result.length === 0) {
                         monControlleur.found = [];
-                        $window.alert(" There is no corresponding match for your search !");
+                        monControlleur.message = "Nothing found";
+                    } else {
+                        monControlleur.found = result;
+                        monControlleur.message = "";
+                      
+                        
                     }
-                    else { monControlleur.found = result; }
                 }, function (error) {
                     if (error.status === 404) {
                         $window.alert("  The page you were looking for doesn't exist (404) ");
