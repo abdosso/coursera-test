@@ -50,6 +50,11 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+.emptyMessage {
+    font-weight: bold;
+    color: red;
+    font-size: 1.2em;
+}
 .btn-dontWantThisOne{color:#fff;background-color:deepskyblue;border-color:deepskyblue}
 
 .btn-narrowItDownForMe{color:#fff;background-color:deeppink;border-color:deeppink}
