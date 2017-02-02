@@ -18,7 +18,9 @@
     </div>
     <div class="form-group narrow-button">
       <button class="btn btn-narrowItDownForMe" ng-click="foundControlleur.foundControlleurResearch(searchTerm)">Narrow It Down For Me!</button>
-    </div><br/><br/><br/>
+       </div><br/><br/><br/>
+       
+        <h3 class="emptyMessage" ng-if="foundControlleur.message">{{foundControlleur.message}}</h3> 
         <h3 ng-if="foundControlleur.found.length>0">{{foundControlleur.found.length}} menu(s) found</h3> 
 
        <!-- found-items should be implemented as a component -->
@@ -26,7 +28,7 @@
                     on-remove="foundControlleur.removeItem(index)" >
    
        </found-items>
-       <div class="error" ng-if="foundDirectiveControlleur.found.length===0">{{foundControlleur.error}}</div>
+     
   </div>
 
 </body>
