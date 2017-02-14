@@ -11,9 +11,9 @@
 
         // Set up UI states
         $stateProvider
-             .state('/', {
+             .state('home', {
                  url: '/',
-                 templateUrl: 'home.html'
+                 templateUrl: 'index.html'
              })
           .state('categories', {
               url: '/Categories',
