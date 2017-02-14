@@ -7,7 +7,7 @@
     function RoutesConfig($stateProvider, $urlRouterProvider) {
 
         // Redirect to tab 1 if no other URL matches
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('home');
 
         // Set up UI states
         $stateProvider
