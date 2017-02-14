@@ -1,0 +1,22 @@
+ <table class="table table-hover"  >
+        <thead>
+        <tr>
+            <th>Short_name Name</th>
+           
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+             <tr ng-repeat="item in $ctrl.itemsListComponent" >
+
+                 <td>({{ item.short_name }}) {{ item.name }}</td>
+            
+      
+               <td> <a  ui-sref="details({categoryForSearch: item.short_name })">Details</a>
+               </td>  
+            </tr>
+
+       
+            </tbody>
+    </table>
